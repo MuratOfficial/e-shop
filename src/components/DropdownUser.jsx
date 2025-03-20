@@ -2,7 +2,12 @@ import React from 'react'
 
 function DropdownUser() {
   return (
-    <div>DropdownUser</div>
+    <div>
+      <button className='px-4 py-2 bg-[#70C05B]'>
+
+      </button>
+
+    </div>
   )
 }
 

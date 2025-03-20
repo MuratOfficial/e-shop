@@ -5,6 +5,7 @@ import { CiHeart } from "react-icons/ci";
 import './App.css'
 import FiveStars from './components/ui/FiveStars';
 import ProductCard from './components/ProductCard';
+import Navbar from './components/Navbar'
 
 const products = [
   {
@@ -62,7 +63,8 @@ function App() {
     {/* <Button  />
     <CiHeart size={30} className=' hover:fill-[#FF6633] cursor-pointer' />
     <FiveStars/> */}
-    <div className='grid grid-cols-5 gap-4'>
+    <Navbar/>
+    <div className='grid grid-cols-5 gap-4 py-4'>
       {
         products.map(x=>(<ProductCard price={x.price} priceOriginal={x.priceOriginal} discount={x.discount} title={x.title} img={x.img}/>
           
