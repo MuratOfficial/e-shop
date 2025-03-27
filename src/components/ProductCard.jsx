@@ -33,7 +33,7 @@ function ProductCard({price, priceOriginal, title, img, discount}) {
         <div className='flex flex-col gap-y-2'>
           <p className=' line-clamp-2 text-start'>{title}</p>
           <FiveStars/>
-          <Button width={"lg"}/>
+          <Button width={"lg"} title="Купить" className="hover:bg-[#FF6633] hover:border-[#FF6633] hover:text-white bg-transparent border-2  border-green-400 text-green-400"/>
 
         </div>
 

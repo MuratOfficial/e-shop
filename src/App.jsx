@@ -9,6 +9,8 @@ import Navbar from './components/Navbar'
 import MainGridCategory from './components/MainGridCategory';
 import TwoBanner from './components/TwoBanner';
 import Map from './components/Map';
+import BlogsGrid from './components/BlogsGrid';
+import Footer from './components/Footer';
 
 const products = [
   {
@@ -72,7 +74,8 @@ function App() {
     </div>
     <TwoBanner/>
     <Map/>
-
+    <BlogsGrid/>
+    <Footer/>
     </main>
    
     {/* <Button  />

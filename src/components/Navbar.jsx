@@ -10,7 +10,7 @@ import SignButton from './SignButton'
 
 function Navbar() {
 
-  const [signed, setSigned] = useState(false)
+  const [signed, setSigned] = useState(true)
 
   return (
     <nav className='w-full px-32 grid grid-cols-12 bg-white py-4 shadow-md'>
