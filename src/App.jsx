@@ -6,6 +6,9 @@ import './App.css'
 import FiveStars from './components/ui/FiveStars';
 import ProductCard from './components/ProductCard';
 import Navbar from './components/Navbar'
+import MainGridCategory from './components/MainGridCategory';
+import TwoBanner from './components/TwoBanner';
+import Map from './components/Map';
 
 const products = [
   {
@@ -59,18 +62,23 @@ function App() {
 
   return (
     <>
+    <main className='w-full min-h-screen bg-[#FBF8EC]'>
+    <Navbar/>
+    <Billboard/>
+    <div className='flex flex-col gap-12 py-4 '>
+      <MainGridCategory title="Акции" link="https://google.com" linkName="Все акции" products={products.slice(0, 4)}/>
+      <MainGridCategory title="Новинки" link="https://google.com" linkName="Все новинки" products={products.slice(0, 4)}/>
+      <MainGridCategory title="Покупали раньше" link="https://google.com" linkName="Все покупки" products={products.slice(0, 4)}/>
+    </div>
+    <TwoBanner/>
+    <Map/>
+
+    </main>
    
     {/* <Button  />
     <CiHeart size={30} className=' hover:fill-[#FF6633] cursor-pointer' />
     <FiveStars/> */}
-    <Navbar/>
-    <div className='grid grid-cols-5 gap-4 py-4'>
-      {
-        products.map(x=>(<ProductCard price={x.price} priceOriginal={x.priceOriginal} discount={x.discount} title={x.title} img={x.img}/>
-          
-        ))
-      }
-    </div>
+  
 
 
   

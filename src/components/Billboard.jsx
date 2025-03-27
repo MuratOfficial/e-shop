@@ -1,8 +1,18 @@
 import React from 'react'
 
 function Billboard() {
+
+  const billboards = [
+    "src\\assets\\slider.png"
+
+  ]
   return (
-    <div>Billboard</div>
+    <section className='w-full overflow-hidden'>
+      {billboards.map((x, k)=>(
+        <img src={x} key={k} className=' object-cover w-full '/>
+      ))}
+
+    </section>
   )
 }
 
