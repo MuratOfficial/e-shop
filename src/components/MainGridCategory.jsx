@@ -14,7 +14,7 @@ function MainGridCategory({title, link, linkName, products}) {
         </div>
         <div className='grid grid-cols-4 gap-8'>
         {
-                    products.map((x, key)=>(<ProductCard key={key} price={x.price} priceOriginal={x.priceOriginal} discount={x.discount} title={x.title} img={x.img}/>))
+                    products.map((x, key)=>(<ProductCard key={key} id={key} price={x.price} priceOriginal={x.priceOriginal} discount={x.discount} title={x.title} img={x.img}/>))
         }
         </div>
         
