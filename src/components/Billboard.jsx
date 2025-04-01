@@ -3,7 +3,7 @@ import React from 'react'
 function Billboard() {
 
   const billboards = [
-    "src\\assets\\slider.png"
+    "assets\\slider.png"
 
   ]
   return (

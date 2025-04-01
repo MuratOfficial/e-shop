@@ -11,7 +11,6 @@ import TwoBanner from './components/TwoBanner';
 import Map from './components/Map';
 import BlogsGrid from './components/BlogsGrid';
 import Footer from './components/Footer';
-import {  Route, Routes } from "react-router";
 
 
 
@@ -22,42 +21,42 @@ function App() {
     {
       priceOriginal: 50.55,
       discount:50,
-      img:"src\\assets\\image.png",
+      img:"assets\\image.png",
       price:48.58899,
       title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»"
     },
     {
       priceOriginal: 50.55,
       discount:50,
-      img:"src\\assets\\image.png",
+      img:"assets\\image.png",
       price:48.58899,
       title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»"
     },
     {
       priceOriginal: 50.55,
       discount:50,
-      img:"src\\assets\\image.png",
+      img:"assets\\image.png",
       price:48.58899,
       title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»"
     },
     {
       priceOriginal: 50.55,
       discount:50,
-      img:"src\\assets\\image.png",
+      img:"assets\\image.png",
       price:48.58899,
       title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»"
     },
     {
       priceOriginal: 50.55,
       discount:50,
-      img:"src\\assets\\image.png",
+      img:"assets\\image.png",
       price:48.58899,
       title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»"
     },
     {
       priceOriginal: 50.55,
       
-      img:"src\\assets\\image.png",
+      img:"assets\\image.png",
       price:48.58899,
       title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»"
     }

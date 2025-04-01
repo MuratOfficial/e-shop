@@ -15,7 +15,7 @@ function Navbar() {
   return (
     <nav className='w-full px-32 grid grid-cols-12 bg-white py-4 shadow-md'>
       <div className='col-span-7 w-full grid grid-cols-11 gap-6 items-center'>
-          <img src="src\assets\logo.svg" className='col-span-3'/>
+          <img src="assets\logo.svg" className='col-span-3'/>
         
         <div className=' flex flex-row gap-4 col-span-8 justify-center items-center'>
           <DropdownMenu/>

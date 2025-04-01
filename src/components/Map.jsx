@@ -13,7 +13,7 @@ function Map() {
         <Button title="п.Диюр" width="md" className="  bg-[#F3F2F1] focus:bg-[#70C05B] hover:bg-[#70C05B] hover:text-white focus:text-white  "/>
 
       </div>
-      <img src='src/assets/map.png' className='w-full'/>
+      <img src='assets/map.png' className='w-full'/>
 
        
 

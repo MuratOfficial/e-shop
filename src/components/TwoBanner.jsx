@@ -7,10 +7,10 @@ function TwoBanner() {
         <div className='grid grid-cols-2 gap-8'>
 
             <a href="" >
-                <img src='src\assets\banner-hover.png' className=' rotate-1 hover:rotate-0 transition delay-75 duration-200'/>
+                <img src='assets\banner-hover.png' className=' rotate-1 hover:rotate-0 transition delay-75 duration-200'/>
             </a>
             <a href="">
-                <img src='src\assets\banner.png' className=' -rotate-1 hover:rotate-0 transition delay-75 duration-200'/>
+                <img src='assets\banner.png' className=' -rotate-1 hover:rotate-0 transition delay-75 duration-200'/>
             </a>
 
 

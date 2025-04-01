@@ -20,28 +20,28 @@ function CatalogsPage() {
     {
       title:"Молоко, сыр, яйца", 
       href: "/catalogs/milk-cheese",
-      img:"src/assets/ctlg/img.png",
+      img:"assets/ctlg/img.png",
       big: true
 
     },
     {
       title:"Хлеб", 
       href: "/catalogs/bread",
-      img:"src/assets/ctlg/img (1).png",
+      img:"assets/ctlg/img (1).png",
       big: false
 
     },
     {
       title:"Фрукты и овощи", 
       href: "/catalogs/veg",
-      img:"src/assets/ctlg/img (2).png",
+      img:"assets/ctlg/img (2).png",
       big: false
 
     },
     {
       title:"Замароженые продукты", 
       href: "/catalogs/frozen",
-      img:"src/assets/ctlg/img (3).png",
+      img:"assets/ctlg/img (3).png",
       big: false
 
     },
@@ -49,63 +49,63 @@ function CatalogsPage() {
     {
       title:"Напитки", 
       href: "/catalogs/drinks",
-      img:"src/assets/ctlg/img (4).png",
+      img:"assets/ctlg/img (4).png",
       big: false
 
     },
     {
       title:"Кондитерские изделия", 
       href: "/catalogs/candis",
-      img:"src/assets/ctlg/img (5).png",
+      img:"assets/ctlg/img (5).png",
       big: false
 
     },
     {
       title:"Чай, кофе", 
       href: "/catalogs/tea",
-      img:"src/assets/ctlg/img (6).png",
+      img:"assets/ctlg/img (6).png",
       big: false
 
     },
     {
       title:"Бакалея", 
       href: "/catalogs/groceries",
-      img:"src/assets/ctlg/img (7).png",
+      img:"assets/ctlg/img (7).png",
       big: false
 
     },
     {
       title:"Здоровеое питание", 
       href: "/catalogs/pp",
-      img:"src/assets/ctlg/img (8).png",
+      img:"assets/ctlg/img (8).png",
       big: false
 
     },
     {
       title:"Зоотовары", 
       href: "/catalogs/zoo",
-      img:"src/assets/ctlg/img (9).png",
+      img:"assets/ctlg/img (9).png",
       big: true
 
     },
     {
       title:"Детское питание", 
       href: "/catalogs/child",
-      img:"src/assets/ctlg/img (10).png",
+      img:"assets/ctlg/img (10).png",
       big:false
 
     },
     {
       title:"Мясо, птица, колбаса", 
       href: "/catalogs/eat",
-      img:"src/assets/ctlg/img (11).png",
+      img:"assets/ctlg/img (11).png",
       big: true
 
     },
     {
       title:"Непродовальственные товарыы", 
       href: "/catalogs/non-groceries",
-      img:"src/assets/ctlg/img (12).png",
+      img:"assets/ctlg/img (12).png",
       big:false
 
     },
