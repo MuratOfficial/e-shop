@@ -15,7 +15,6 @@ import Footer from './components/Footer';
 
 
 function App() {
-  const [count, setCount] = useState(0)
 
   const products = [
     {
@@ -23,43 +22,59 @@ function App() {
       discount:50,
       img:"assets\\image.png",
       price:48.58899,
-      title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»"
+      title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
+      id: "product1"
     },
     {
       priceOriginal: 50.55,
       discount:50,
       img:"assets\\image.png",
       price:48.58899,
-      title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»"
+      title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
+      id: "product2"
     },
     {
       priceOriginal: 50.55,
       discount:50,
       img:"assets\\image.png",
       price:48.58899,
-      title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»"
+      title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
+      id: "product3"
     },
     {
       priceOriginal: 50.55,
       discount:50,
       img:"assets\\image.png",
       price:48.58899,
-      title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»"
+      title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
+      id: "product4"
     },
     {
       priceOriginal: 50.55,
       discount:50,
       img:"assets\\image.png",
       price:48.58899,
-      title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»"
+      title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
+      id: "product5"
     },
     {
       priceOriginal: 50.55,
-      
+      discount:50,
       img:"assets\\image.png",
       price:48.58899,
-      title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»"
-    }
+      title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
+      id: "product6"
+    },
+    {
+      priceOriginal: 50.55,
+      discount:50,
+      img:"assets\\image.png",
+      price:48.58899,
+      title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
+      id: "product7"
+    },
+
+   
   ]
 
 

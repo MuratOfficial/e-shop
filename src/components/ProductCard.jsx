@@ -3,8 +3,12 @@ import { CiHeart } from 'react-icons/ci'
 import FiveStars from './ui/FiveStars'
 import Button from './ui/Button'
 import { Link } from 'react-router'
+import { useParams } from 'react-router'
 
 function ProductCard({price, priceOriginal, title, img, discount, id}) {
+
+  let {catalogId} = useParams();
+
   return (
     <div className=' rounded-md min-h-[349px] gap-0.5 w-[272px] p-4 bg-white hover:shadow-md transition justify-between duration-200 delay-75 flex flex-col'>
       <div className=' relative'>
@@ -37,7 +41,7 @@ function ProductCard({price, priceOriginal, title, img, discount, id}) {
         </div>
         
         <div className='flex flex-col gap-y-2'>
-        <Link to={`/catalogs/${id}`} className=' hover:text-[#FF6633]'><p className=' line-clamp-2 text-start'>{title}</p></Link>
+        <Link to={`/catalogs/${catalogId}/${id}`} className=' hover:text-[#FF6633]'><p className=' line-clamp-2 text-start'>{title}</p></Link>
           
           <FiveStars/>
           <Button width={"lg"} title="Купить" className="hover:bg-[#FF6633] hover:border-[#FF6633] hover:text-white bg-transparent border-2  border-green-400 text-green-400"/>

@@ -23,43 +23,59 @@ function CatalogPage() {
       discount:50,
       img:"assets\\image.png",
       price:48.58899,
-      title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»"
+      title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
+      id: "product1"
     },
     {
       priceOriginal: 50.55,
       discount:50,
       img:"assets\\image.png",
       price:48.58899,
-      title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»"
+      title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
+      id: "product2"
     },
     {
       priceOriginal: 50.55,
       discount:50,
       img:"assets\\image.png",
       price:48.58899,
-      title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»"
+      title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
+      id: "product3"
     },
     {
       priceOriginal: 50.55,
       discount:50,
       img:"assets\\image.png",
       price:48.58899,
-      title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»"
+      title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
+      id: "product4"
     },
     {
       priceOriginal: 50.55,
       discount:50,
       img:"assets\\image.png",
       price:48.58899,
-      title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»"
+      title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
+      id: "product5"
     },
     {
       priceOriginal: 50.55,
-      
+      discount:50,
       img:"assets\\image.png",
       price:48.58899,
-      title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»"
-    }
+      title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
+      id: "product6"
+    },
+    {
+      priceOriginal: 50.55,
+      discount:50,
+      img:"assets\\image.png",
+      price:48.58899,
+      title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
+      id: "product7"
+    },
+
+   
   ]
 
   const types = [
@@ -105,7 +121,7 @@ function CatalogPage() {
          </div>
          <div className='grid grid-cols-3 w-full gap-6'>
          {
-                    products.map((x, key)=>(<ProductCard key={key} id={key} price={x.price} priceOriginal={x.priceOriginal} discount={x.discount} title={x.title} img={x.img}/>))
+                    products.map((x, key)=>(<ProductCard key={key} id={x.id} price={x.price} priceOriginal={x.priceOriginal} discount={x.discount} title={x.title} img={x.img}/>))
         }
          </div>
          <div></div>

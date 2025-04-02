@@ -4,6 +4,7 @@ import Slider from './ui/Slider'
 import { Link } from 'react-router'
 import Switch from './ui/Switch'
 
+
 function Filter() {
   return (
     <div className='flex flex-col gap-6 w-full'>
@@ -29,9 +30,9 @@ function Filter() {
             <Link className='hover:text-green-500 transition delay-100 duration-200'>
             Яйцо
             </Link>
-            
+            <Switch/>
         </div>
-        {/* <Switch/> */}
+        <Button title="Применить" className=" w-full text-center bg-[#FF6633] text-white hover:bg-green-500 transition delay-100 duration-300 "/>
     </div>
   )
 }

@@ -123,8 +123,8 @@ function CatalogsPage() {
       </h2>
 
       <div className=' mt-6 grid grid-cols-4 gap-4'>
-        {catalogs.map((x)=>(
-          <CatalogCard title={x.title} href={x.href} img={x.img} big={x.big}/>
+        {catalogs.map((x, n)=>(
+          <CatalogCard title={x.title} key={n} href={x.href} img={x.img} big={x.big}/>
         ))}
       </div>
 
