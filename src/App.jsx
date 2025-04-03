@@ -35,7 +35,7 @@ function App() {
     },
     {
       priceOriginal: 50.55,
-      discount:50,
+      
       img:"assets\\image.png",
       price:48.58899,
       title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
@@ -43,7 +43,7 @@ function App() {
     },
     {
       priceOriginal: 50.55,
-      discount:50,
+      
       img:"assets\\image.png",
       price:48.58899,
       title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
@@ -51,7 +51,7 @@ function App() {
     },
     {
       priceOriginal: 50.55,
-      discount:50,
+      
       img:"assets\\image.png",
       price:48.58899,
       title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
@@ -59,7 +59,7 @@ function App() {
     },
     {
       priceOriginal: 50.55,
-      discount:50,
+      
       img:"assets\\image.png",
       price:48.58899,
       title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
@@ -87,7 +87,7 @@ function App() {
     
     
           <Billboard/>
-              <div className='flex flex-col gap-12 py-4 '>
+              <div className='flex flex-col gap-12 py-4 px-32 '>
                   <MainGridCategory title="Акции" link="https://google.com" linkName="Все акции" products={products.slice(0, 4)}/>
                   <MainGridCategory title="Новинки" link="https://google.com" linkName="Все новинки" products={products.slice(0, 4)}/>
                   <MainGridCategory title="Покупали раньше" link="https://google.com" linkName="Все покупки" products={products.slice(0, 4)}/>
