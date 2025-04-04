@@ -7,10 +7,10 @@ import Button from '../components/ui/Button'
 import { CiCircleInfo, CiHeart } from 'react-icons/ci';
 import { FiShare2 } from 'react-icons/fi';
 import { GiShoppingCart } from 'react-icons/gi';
-import Bonus from '../components/icons/Bonus';
 import { BsBellSlash } from 'react-icons/bs';
 import { BiSolidCircleHalf } from 'react-icons/bi';
 import MainGridCategory from '../components/MainGridCategory';
+import Testimonials from '../components/testimonials';
 
 function ProductPage() {
 
@@ -183,7 +183,7 @@ const products = [
     <MainGridCategory title="С этим товаром покупают"  products={products.slice(0, 4)}/>
 
     <MainGridCategory title="Акции" link="https://google.com" linkName="Все акции" products={products.slice(0, 4)}/>
-   
+    <Testimonials/>
 
   
 
