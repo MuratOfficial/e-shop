@@ -1,9 +1,7 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
 import Breadcrumb from '../components/ui/Breadcrumb'
 import Button from '../components/ui/Button'
-import ProductCard from '../components/ProductCard'
+import ProductCard from '../components/cards/ProductCard'
 import Filter from '../components/Filter'
 
 function CatalogPage() {
@@ -21,7 +19,7 @@ function CatalogPage() {
     {
       priceOriginal: 50.55,
       discount:50,
-      img:"assets\\image.png",
+      img:"/assets/image.png",
       price:48.58899,
       title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
       id: "product1"
@@ -29,7 +27,7 @@ function CatalogPage() {
     {
       priceOriginal: 50.55,
       discount:50,
-      img:"assets\\image.png",
+      img:"/assets/image.png",
       price:48.58899,
       title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
       id: "product2"
@@ -37,7 +35,7 @@ function CatalogPage() {
     {
       priceOriginal: 50.55,
       discount:50,
-      img:"assets\\image.png",
+      img:"/assets/image.png",
       price:48.58899,
       title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
       id: "product3"
@@ -45,7 +43,7 @@ function CatalogPage() {
     {
       priceOriginal: 50.55,
       discount:50,
-      img:"assets\\image.png",
+      img:"/assets/image.png",
       price:48.58899,
       title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
       id: "product4"
@@ -53,7 +51,7 @@ function CatalogPage() {
     {
       priceOriginal: 50.55,
       discount:50,
-      img:"assets\\image.png",
+      img:"/assets/image.png",
       price:48.58899,
       title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
       id: "product5"
@@ -61,7 +59,7 @@ function CatalogPage() {
     {
       priceOriginal: 50.55,
       discount:50,
-      img:"assets\\image.png",
+      img:"/assets/image.png",
       price:48.58899,
       title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
       id: "product6"
@@ -69,7 +67,7 @@ function CatalogPage() {
     {
       priceOriginal: 50.55,
       discount:50,
-      img:"assets\\image.png",
+      img:"/assets/image.png",
       price:48.58899,
       title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
       id: "product7"
@@ -96,9 +94,8 @@ function CatalogPage() {
 
   return (
     <>
-    <Navbar/>
-    <section className=' px-32 py-8 w-full flex gap-8 flex-col min-h-screen items-start bg-[#FBF8EC]'>
-      <Breadcrumb links={links}/>
+    <section className=' px-32 py-6 w-full flex gap-8 flex-col min-h-screen items-start bg-[#FBF8EC]'>
+      
       <h2 className='text-5xl font-extrabold text-[#414141]'>
       Молоко, сыр, яйца
 
@@ -133,7 +130,6 @@ function CatalogPage() {
 
 
     </section>
-    <Footer/>
 
     </>
   )

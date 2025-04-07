@@ -4,13 +4,13 @@ import Billboard from './components/Billboard'
 import { CiHeart } from "react-icons/ci";
 import './App.css'
 import FiveStars from './components/ui/FiveStars';
-import ProductCard from './components/ProductCard';
-import Navbar from './components/Navbar'
-import MainGridCategory from './components/MainGridCategory';
-import TwoBanner from './components/TwoBanner';
+import ProductCard from './components/cards/ProductCard';
+import Navbar from './components/ui/Navbar'
+import MainGridCategory from './components/grids/MainGridCategory';
+import TwoBanner from './components/grids/TwoBanner';
 import Map from './components/Map';
-import BlogsGrid from './components/BlogsGrid';
-import Footer from './components/Footer';
+import BlogsGrid from './components/grids/BlogsGrid';
+import Footer from './components/ui/Footer';
 
 
 
@@ -83,8 +83,7 @@ function App() {
 
    
     <main className='w-full min-h-screen bg-[#FBF8EC]'>
-    <Navbar/>
-    
+
     
           <Billboard/>
               <div className='flex flex-col gap-12 py-4 px-32 '>
@@ -96,8 +95,6 @@ function App() {
               <Map/>
               <BlogsGrid/>
 
-          
-    <Footer/>
     </main>
     
     

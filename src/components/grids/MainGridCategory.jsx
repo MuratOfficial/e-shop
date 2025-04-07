@@ -1,5 +1,5 @@
 import React from 'react'
-import ProductCard from './ProductCard'
+import ProductCard from '../cards/ProductCard'
 import {  FaChevronRight } from 'react-icons/fa'
 
 function MainGridCategory({title, link, linkName, products}) {

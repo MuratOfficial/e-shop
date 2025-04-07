@@ -1,6 +1,4 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 import Breadcrumb from '../components/ui/Breadcrumb';
 import FiveStars from '../components/ui/FiveStars';
 import Button from '../components/ui/Button'
@@ -9,7 +7,7 @@ import { FiShare2 } from 'react-icons/fi';
 import { GiShoppingCart } from 'react-icons/gi';
 import { BsBellSlash } from 'react-icons/bs';
 import { BiSolidCircleHalf } from 'react-icons/bi';
-import MainGridCategory from '../components/MainGridCategory';
+import MainGridCategory from '../components/grids/MainGridCategory';
 import Testimonials from '../components/testimonials';
 
 function ProductPage() {
@@ -37,7 +35,7 @@ const products = [
   {
     priceOriginal: 50.55,
     discount:50,
-    img:"assets\\image.png",
+    img:"/assets/image.png",
     price:48.58899,
     title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
     id: "product1"
@@ -45,7 +43,7 @@ const products = [
   {
     priceOriginal: 50.55,
     discount:50,
-    img:"assets\\image.png",
+    img:"/assets/image.png",
     price:48.58899,
     title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
     id: "product2"
@@ -53,7 +51,7 @@ const products = [
   {
     priceOriginal: 50.55,
     
-    img:"assets\\image.png",
+    img:"/assets/image.png",
     price:48.58899,
     title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
     id: "product3"
@@ -61,7 +59,7 @@ const products = [
   {
     priceOriginal: 50.55,
     
-    img:"assets\\image.png",
+    img:"/assets/image.png",
     price:48.58899,
     title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
     id: "product4"
@@ -69,7 +67,7 @@ const products = [
   {
     priceOriginal: 50.55,
     
-    img:"assets\\image.png",
+    img:"/assets/image.png",
     price:48.58899,
     title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
     id: "product5"
@@ -77,7 +75,7 @@ const products = [
   {
     priceOriginal: 50.55,
     
-    img:"assets\\image.png",
+    img:"/assets/image.png",
     price:48.58899,
     title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
     id: "product6"
@@ -85,7 +83,7 @@ const products = [
   {
     priceOriginal: 50.55,
     discount:50,
-    img:"assets\\image.png",
+    img:"/assets/image.png",
     price:48.58899,
     title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
     id: "product7"
@@ -97,10 +95,8 @@ const products = [
 
   return (
     
-    <>
-    <Navbar/>
-    <section className=' px-32 py-8 w-full flex gap-8 flex-col min-h-screen items-start bg-[#F3F2F1]'>
-      <Breadcrumb links={links}/>
+    <section className=' px-32 py-6 w-full flex gap-8 flex-col min-h-screen items-start bg-[#F3F2F1]'>
+      
       <h2 className='text-3xl font-extrabold text-[#414141]'>
       Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»
 
@@ -182,16 +178,14 @@ const products = [
 
     <MainGridCategory title="С этим товаром покупают"  products={products.slice(0, 4)}/>
 
-    <MainGridCategory title="Акции" link="https://google.com" linkName="Все акции" products={products.slice(0, 4)}/>
+    
     <Testimonials/>
 
-  
+    <MainGridCategory title="Акции" link="https://google.com" linkName="Все акции" products={products.slice(0, 4)}/>
 
 
     </section>
-    <Footer/>
 
-    </>
 
   )
 }

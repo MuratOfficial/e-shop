@@ -1,7 +1,7 @@
 import React from 'react'
 import { CiHeart } from 'react-icons/ci'
-import FiveStars from './ui/FiveStars'
-import Button from './ui/Button'
+import FiveStars from '../ui/FiveStars'
+import Button from '../ui/Button'
 import { Link } from 'react-router'
 import { useParams } from 'react-router'
 

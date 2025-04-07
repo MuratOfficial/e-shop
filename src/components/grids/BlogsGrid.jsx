@@ -1,6 +1,6 @@
 import React from 'react'
 import { FaChevronRight } from 'react-icons/fa'
-import BlogCard from './BlogCard'
+import BlogCard from '../cards/BlogCard'
 
 function BlogsGrid() {
 

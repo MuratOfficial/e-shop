@@ -1,12 +1,13 @@
 import React from 'react'
-import Navbar from '../Navbar'
-import Billboard from '../Billboard'
-import Footer from '../Footer'
+import Navbar from '../ui/Navbar'
+import Footer from '../ui/Footer'
+import { Outlet } from 'react-router'
 
 function MainLayout() {
   return (
     <main className='w-full min-h-screen bg-[#FBF8EC]'>
       <Navbar/>
+      <Outlet/>
       
 
       <Footer/>

@@ -1,6 +1,6 @@
 import React from 'react'
 import FiveStars from './ui/FiveStars'
-import CommentaryCard from './CommentaryCard'
+import CommentaryCard from './cards/CommentaryCard'
 import CommentaryForm from './CommentaryForm'
 
 function Testimonials() {

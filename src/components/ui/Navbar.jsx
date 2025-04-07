@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import DropdownMenu from './ui/DropdownMenu'
-import Search from './Search'
-import NavIcon from './ui/NavIcon'
+import DropdownMenu from './DropdownMenu'
+import Search from '../Search'
+import NavIcon from './NavIcon'
 import { CiHeart } from 'react-icons/ci'
 import { BsBoxSeam } from 'react-icons/bs'
 import { GiShoppingCart } from 'react-icons/gi'
@@ -15,7 +15,7 @@ function Navbar() {
   return (
     <nav className='w-full px-32 grid grid-cols-12 bg-white py-4 shadow-md'>
       <div className='col-span-7 w-full grid grid-cols-11 gap-6 items-center'>
-          <img src="assets\logo.svg" className='col-span-3'/>
+          <img src="/assets/logo.svg" className='col-span-3'/>
         
         <div className=' flex flex-row gap-4 col-span-8 justify-center items-center'>
           <DropdownMenu/>
@@ -24,9 +24,9 @@ function Navbar() {
 
       </div>
       <div className=' col-span-5 grid grid-cols-6 px-4'>
-        <NavIcon children={<CiHeart size={24} className='group-hover:text-[#FF6633]'/>} name="Избранное"/>
-        <NavIcon children={<BsBoxSeam size={20} className='group-hover:text-[#FF6633]'/>} name="Заказы" />
-        <NavIcon children={<GiShoppingCart  size={24} className='group-hover:text-[#FF6633]'/>} name="Корзина" />
+        <NavIcon link={`/favorites`} children={<CiHeart size={24} className='group-hover:text-[#FF6633]'/>} name="Избранное"/>
+        <NavIcon link={`/orders`} children={<BsBoxSeam size={20} className='group-hover:text-[#FF6633]'/>} name="Заказы" />
+        <NavIcon link={`/basket`} children={<GiShoppingCart  size={24} className='group-hover:text-[#FF6633]'/>} name="Корзина" />
         {signed ? <DropdownUser /> : <SignButton/>}
         
         

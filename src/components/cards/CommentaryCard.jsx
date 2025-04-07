@@ -1,6 +1,6 @@
 import React from 'react'
 import { FiUser } from 'react-icons/fi'
-import FiveStars from './ui/FiveStars'
+import FiveStars from '../ui/FiveStars'
 
 function CommentaryCard({username, date, rate, comments}) {
   return (
