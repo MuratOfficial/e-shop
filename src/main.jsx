@@ -10,6 +10,8 @@ import ProductPage from './pages/ProductPage.jsx'
 import MainLayout from './components/layouts/MainLayout.jsx'
 import BreadcrumbLayout from './components/layouts/BreadCrumb.jsx'
 import OrdersPage from './pages/OrdersPage.jsx'
+import FavoritesPage from './pages/FavoritesPage.jsx'
+import BasketPage from './pages/BasketPage.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -25,6 +27,9 @@ createRoot(document.getElementById('root')).render(
           </Route>
           <Route path="contact" element={<ContactsPage />} />
           <Route path='orders' element={<OrdersPage/>} />
+          <Route path='favorites' element={<FavoritesPage/>} />
+          <Route path='basket' element={<BasketPage/>} />
+
           </Route>
           
         </Route>

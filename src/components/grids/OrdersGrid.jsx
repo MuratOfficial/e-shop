@@ -1,10 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ProductCard from '../cards/ProductCard'
 import Button from '../ui/Button';
-import { FiEye } from 'react-icons/fi';
+import { FiEye, FiEyeOff } from 'react-icons/fi';
 import { CiCalendar } from 'react-icons/ci';
 
 function OrdersGrid({date, time, status, price, products}) {
+
+    const [allList, setAllList] = useState(false);
+
+    function showAllProducts(){
+        if(allList){
+            setAllList(false)
+        }else{
+            setAllList(true)
+        }
+    }
 
     const needBtn = products.length > 4 ? true : false;
 
@@ -26,7 +36,7 @@ function OrdersGrid({date, time, status, price, products}) {
                 Не доставили
             </div>}
 
-            {status === `send-back` && <div className={`bg-red-600 text-white px-4 py-2 rounded-md`}>
+            {status === `sent-back` && <div className={`bg-red-600 text-white px-4 py-2 rounded-md`}>
                 Возврат
             </div>}
 
@@ -37,21 +47,28 @@ function OrdersGrid({date, time, status, price, products}) {
         </div>
 
         <div className=' flex flex-row items-center gap-6'>
-            <p className='text-3xl font-mono font-normal'>{price}</p>
+            <p className='text-3xl font-mono font-normal'>{price ?? 0}₸</p>
 
-            {status === "pending" ? <Button title={`Когда доставит`} icon={<CiCalendar size={20} />} className={`bg-[#70C05B] hover:bg-[#FF6633] gap-3 text-sm text-white w-fit`}/> : <Button />}
-            
-
+            {status === "pending" ? <Button title={`Когда доставит`} icon={<CiCalendar size={20} />} className={`bg-[#70C05B] hover:bg-[#FF6633] gap-3 text-sm text-white w-fit`}/> : <Button title={`Заказать`} icon={<CiCalendar size={20} />} className={`bg-[#FF6633]  hover:bg-[#70C05B] gap-3 text-sm text-white w-fit`}/>}
+      
         </div>
             
             
      </div>
     <div className='grid grid-cols-4 gap-8'>
     {
-                products.slice(0, 4).map((x, key)=>(<ProductCard key={key} id={x.id} price={x.price} priceOriginal={x.priceOriginal} discount={x.discount} title={x.title} img={x.img}/>))
+                products.slice(0, 4).map((x, key)=>(<ProductCard count={x.count} key={key} id={x.id} price={x.price} priceOriginal={x.priceOriginal} discount={x.discount} title={x.title} img={x.img}/>))
     }
+    {
+      allList &&  products.slice(4).map((x, key)=>(<ProductCard count={x.count} key={key} id={x.id} price={x.price} priceOriginal={x.priceOriginal} discount={x.discount} title={x.title} img={x.img}/>))
+    
+    }
+
+
     </div>
-    {needBtn && <Button title={`Просмотреть заказ`} icon={<FiEye size={20} />} className={` w-fit gap-4 bg-zinc-200 hover:bg-zinc-100 `}/>}
+    {needBtn && !allList && <button onClick={()=>showAllProducts()}   className={`flex flex-row  px-3 py-2 rounded-lg items-center transition delay-100 duration-300 cursor-pointer w-fit gap-4 bg-zinc-200 hover:bg-zinc-100 `}><FiEye size={20} /> Просмотреть заказ</button>}
+    {needBtn && allList && <button onClick={()=>showAllProducts()} className={`flex flex-row  px-3 py-2 rounded-lg items-center transition delay-100 duration-300 cursor-pointer w-fit gap-4 bg-zinc-200 hover:bg-zinc-100 `}><FiEyeOff size={20} />Скрыть заказ</button>}
+    
     
     
 

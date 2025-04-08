@@ -4,14 +4,21 @@ import FiveStars from '../ui/FiveStars'
 import Button from '../ui/Button'
 import { Link } from 'react-router'
 import { useParams } from 'react-router'
+import { LuShoppingCart } from 'react-icons/lu'
 
-function ProductCard({price, priceOriginal, title, img, discount, id}) {
+function ProductCard({price, priceOriginal, title, img, discount, id, count}) {
 
   let {catalogId} = useParams();
 
   return (
     <div className=' rounded-md min-h-[349px] gap-0.5 w-[272px] p-4 bg-white hover:shadow-md transition justify-between duration-200 delay-75 flex flex-col'>
       <div className=' relative'>
+        {count && <div className='flex flex-row items-center gap-2 absolute left-1 top-1'>
+        <LuShoppingCart size={26} />
+        <p className='font-semibold'>{count}</p>
+        </div> }
+
+        
        
         <img src={img}/>
         
