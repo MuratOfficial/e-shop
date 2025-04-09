@@ -4,87 +4,17 @@ import Button from '../components/ui/Button';
 import { TbSquareMinusFilled } from 'react-icons/tb';
 import { FaTrashAlt } from 'react-icons/fa';
 import BasketCard from '../components/cards/BasketCard';
+import Switch from '../components/ui/Switch'
 
 function BasketPage() {
 
-  const [selectAll, setSelectAll] = useState(false);
-  
-
 
   const products = [
-    {
-      priceOriginal: 50.55,
-      discount:50,
-      img:"/assets/image.png",
-      price:48.58899,
-      title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
-      id: "product1",
-      count:5,
-    },
-    {
-      priceOriginal: 50.55,
-      discount:50,
-      img:"/assets/image.png",
-      price:48.58899,
-      title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
-      id: "product2",
-      count:5,
-    },
-    {
-      priceOriginal: 50.55,
-      discount:50,
-      img:"/assets/image.png",
-      price:48.58899,
-      title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
-      id: "product3",
-      count:2,
-    },
-    {
-      priceOriginal: 50.55,
-      discount:50,
-      img:"/assets/image.png",
-      price:48.58899,
-      title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
-      id: "product4",
-      count:1,
-    },
-    {
-      priceOriginal: 50.55,
-      discount:50,
-      img:"/assets/image.png",
-      price:48.58899,
-      title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
-      id: "product5",
-      count:2,
-    },
-    {
-      priceOriginal: 50.55,
-      discount:50,
-      img:"/assets/image.png",
-      price:48.58899,
-      title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
-      id: "product6",
-      count:55,
-    },
-    {
-      priceOriginal: 50.55,
-      discount:50,
-      img:"/assets/image.png",
-      price:48.58899,
-      title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
-      id: "product7",
-      count:50,
-    },
-
-   
-  ]
-
-  const orders = [
-    {date:"01.05.2025", price:5200, time:"11:00-15:00", status:"pending"},
-    {date:"01.05.2025", price:5200, time:"11:00-15:00", status:"pending"},
-    {date:"01.05.2025", price:5200, time:"11:00-15:00", status:"pending"},
-    {date:"01.05.2025", price:5200, time:"11:00-15:00", status:"pending"},
-    {date:"01.05.2025", price:5200, time:"11:00-15:00", status:"pending"}
+    {img:'/assets/image.png', name:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»", price:44.50, discount:10, count:2,empty:false},
+    {img:'/assets/image.png', name:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»", price:44.50, discount:10, count:2,empty:true},
+    {img:'/assets/image.png', name:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»", price:44.50, discount:10, count:2,empty:true},
+    {img:'/assets/image.png', name:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»", price:44.50, discount:10, count:2,empty:false},
+    {img:'/assets/image.png', name:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»", price:44.50, discount:10, count:2,empty:false}
   ]
 
   return (
@@ -100,14 +30,22 @@ function BasketPage() {
             <Button  title={`Выделить все`} className={` w-fit gap-2 hover:text-white hover:bg-[#FF6633]`} icon={<TbSquareMinusFilled size={30} fill='#70C05B' />}/>
             <Button title={`Удалить выбранные`} className={` group w-fit gap-2 text-[#FF6633] items-center hover:text-red-600 `} icon={<FaTrashAlt className=' opacity-0 group-hover:opacity-100 transition delay-75 duration-150 '  size={20} fill='red' />}/>  
           </div>
-          <div className='flex flex-col justify-start items-center'>
-            <BasketCard/>
+          <div className='flex flex-col justify-start items-center gap-6'>
+
+            {products.map((x, i)=>(
+              <BasketCard key={i} img={x.img} name={x.name} price={x.price} discount={x.discount} count={x.count} empty={x.empty}/>
+            ))}
+            
+           
           </div>
     
 
 
         </div>
-        <div></div>
+        <div className='flex flex-col items-start justify-start pt-12 '>
+            <div className='flex flex-row '> <Switch/> </div>
+
+        </div>
 
       </div>
   
