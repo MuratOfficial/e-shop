@@ -7,8 +7,8 @@ function Footer() {
         <div className='grid grid-cols-12 w-full'>
             <div className='col-span-8 flex flex-row items-center justify-between'>
                 <img src='/assets/logoFooter.svg' alt='logo-end'/>
-                <a href="" className='text-sm hover:text-[#FF6633] transition delay-75 duration-200' >О компании</a>
-                <a href="" className='text-sm hover:text-[#FF6633] transition delay-75 duration-200'>Контакты</a>
+                <a href="/about" className='text-sm hover:text-[#FF6633] transition delay-75 duration-200' >О компании</a>
+                <a href="/contacts" className='text-sm hover:text-[#FF6633] transition delay-75 duration-200'>Контакты</a>
                 <a href="" className='text-sm hover:text-[#FF6633] transition delay-75 duration-200'>Вакансии</a>
                 <a href="" className='text-sm hover:text-[#FF6633] transition delay-75 duration-200'>Статьи</a>
                 <a href="" className='text-sm hover:text-[#FF6633] transition delay-75 duration-200'>Политика обработки персональных данных</a>
