@@ -11,72 +11,13 @@ import TwoBanner from './components/grids/TwoBanner';
 import Map from './components/Map';
 import BlogsGrid from './components/grids/BlogsGrid';
 import Footer from './components/ui/Footer';
+import { useSelector } from 'react-redux';
 
 
 
 function App() {
 
-  const products = [
-    {
-      priceOriginal: 50.55,
-      discount:50,
-      img:"assets\\image.png",
-      price:48.58899,
-      title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
-      id: "product1"
-    },
-    {
-      priceOriginal: 50.55,
-      discount:50,
-      img:"assets\\image.png",
-      price:48.58899,
-      title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
-      id: "product2"
-    },
-    {
-      priceOriginal: 50.55,
-      
-      img:"assets\\image.png",
-      price:48.58899,
-      title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
-      id: "product3"
-    },
-    {
-      priceOriginal: 50.55,
-      
-      img:"assets\\image.png",
-      price:48.58899,
-      title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
-      id: "product4"
-    },
-    {
-      priceOriginal: 50.55,
-      
-      img:"assets\\image.png",
-      price:48.58899,
-      title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
-      id: "product5"
-    },
-    {
-      priceOriginal: 50.55,
-      
-      img:"assets\\image.png",
-      price:48.58899,
-      title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
-      id: "product6"
-    },
-    {
-      priceOriginal: 50.55,
-      discount:50,
-      img:"assets\\image.png",
-      price:48.58899,
-      title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
-      id: "product7"
-    },
-
-   
-  ]
-
+  const products = useSelector((state)=>state.counter.initialProducts)
 
 
   return (
@@ -85,7 +26,7 @@ function App() {
     <main className='w-full min-h-screen bg-[#FBF8EC]'>
 
     
-          <Billboard/>
+          <Billboard />
               <div className='flex flex-col gap-12 py-4 px-32 '>
                   <MainGridCategory title="Акции" link="https://google.com" linkName="Все акции" products={products.slice(0, 4)}/>
                   <MainGridCategory title="Новинки" link="https://google.com" linkName="Все новинки" products={products.slice(0, 4)}/>

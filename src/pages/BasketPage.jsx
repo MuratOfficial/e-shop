@@ -7,10 +7,12 @@ import BasketCard from '../components/cards/BasketCard';
 import Switch from '../components/ui/Switch'
 import Price from '../components/helper/Price';
 import { BiSolidCircleHalf } from 'react-icons/bi';
+import { useDispatch, useSelector } from 'react-redux';
 
 function BasketPage() {
 
-
+  const basketCount = useSelector((state)=>state.counter.value);
+  const dispatch = useDispatch();
   const products = [
     {img:'/assets/image.png', name:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»", price:44.50, discount:10, count:2,empty:false},
     {img:'/assets/image.png', name:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»", price:44.50, discount:10, count:2,empty:true},
@@ -32,7 +34,7 @@ function BasketPage() {
     <section className=' px-32 py-6 w-full flex gap-8 flex-col min-h-screen items-start '>
       <h2 className='relative pr-8 text-7xl font-extrabold text-[#414141]'>
       Корзина
-      <span className='bg-[#FF6633] font-normal rounded-sm px-2 py-1 text-white/95 text-sm absolute top-0 right-0'>3</span>
+      <span className='bg-[#FF6633] font-normal rounded-sm px-2 py-1 text-white/95 text-sm absolute top-0 right-0'>{basketCount}</span>
       </h2>
       <div className="grid grid-cols-4 w-full gap-16 ">
         <div className="col-span-3 flex flex-col gap-4 items-start">

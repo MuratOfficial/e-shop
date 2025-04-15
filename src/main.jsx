@@ -13,9 +13,14 @@ import OrdersPage from './pages/OrdersPage.jsx'
 import FavoritesPage from './pages/FavoritesPage.jsx'
 import BasketPage from './pages/BasketPage.jsx'
 import AboutPage from './pages/AboutPage.jsx'
+import { Provider } from 'react-redux'
+import { store } from './app/store.js'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+<Provider store={store} >
+
+    
     <BrowserRouter>
       <Routes>
         <Route element={<MainLayout />}>
@@ -36,5 +41,7 @@ createRoot(document.getElementById('root')).render(
         </Route>
       </Routes>
     </BrowserRouter>
+
+    </Provider>
   </StrictMode>
 )

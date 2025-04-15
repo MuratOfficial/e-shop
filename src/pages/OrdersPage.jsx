@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import OrdersGrid from '../components/grids/OrdersGrid'
+import { useSelector } from 'react-redux';
 
 function OrdersPage() {
 
@@ -13,73 +14,8 @@ function OrdersPage() {
           }
   }
 
-  const products = [
-    {
-      priceOriginal: 50.55,
-      discount:50,
-      img:"/assets/image.png",
-      price:48.58899,
-      title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
-      id: "product1",
-      count:5,
-    },
-    {
-      priceOriginal: 50.55,
-      discount:50,
-      img:"/assets/image.png",
-      price:48.58899,
-      title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
-      id: "product2",
-      count:5,
-    },
-    {
-      priceOriginal: 50.55,
-      discount:50,
-      img:"/assets/image.png",
-      price:48.58899,
-      title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
-      id: "product3",
-      count:2,
-    },
-    {
-      priceOriginal: 50.55,
-      discount:50,
-      img:"/assets/image.png",
-      price:48.58899,
-      title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
-      id: "product4",
-      count:1,
-    },
-    {
-      priceOriginal: 50.55,
-      discount:50,
-      img:"/assets/image.png",
-      price:48.58899,
-      title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
-      id: "product5",
-      count:2,
-    },
-    {
-      priceOriginal: 50.55,
-      discount:50,
-      img:"/assets/image.png",
-      price:48.58899,
-      title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
-      id: "product6",
-      count:55,
-    },
-    {
-      priceOriginal: 50.55,
-      discount:50,
-      img:"/assets/image.png",
-      price:48.58899,
-      title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
-      id: "product7",
-      count:50,
-    },
+  const products = useSelector((state)=>state.counter.initialProducts)
 
-   
-  ]
 
   const orders = [
     {date:"01.05.2025", price:5200, time:"11:00-15:00", status:"pending"},
