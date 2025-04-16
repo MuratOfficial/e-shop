@@ -44,9 +44,9 @@ function BasketCard({img='/assets/image.png', name="Комбайн КЗС-1218 �
                 <div className='flex flex-col gap-1 items-start justify-center'>
                     <div className="flex flex-row gap-2 items-center justify-start text-sm">
             <p className=' font-bold'>
-                    {discount ? (price * (100-discount)/100) :  price} ₸
+                    {discount ? (price * (100-discount)/100).toFixed(2) :  price} ₸
                 </p>
-                {discount && <p> {price} ₸</p>}
+                {discount && <p> {price.toFixed(2)} ₸</p>}
                 
             <span>за шт.</span>
         </div>
@@ -70,10 +70,10 @@ function BasketCard({img='/assets/image.png', name="Комбайн КЗС-1218 �
 </div>
 </div>}
 {!empty ? <div className='col-span-2 flex flex-col items-end h-full py-3 justify-start px-4'>
-            <Price className={`font-extrabold `} price={discount ? (allSumm * (100-discount)/100) :  allSumm}/>
+            <Price className={`font-extrabold `} price={discount ? (allSumm * (100-discount)/100).toFixed(2) :  allSumm.toFixed(2)}/>
 
             
-            {discount && <Price className={` line-through text-zinc-400 text-sm`} price={allSumm}/>}  
+            {discount && <Price className={` line-through text-zinc-400 text-sm`} price={allSumm.toFixed(2)}/>}  
         </div>:<p className='col-span-4 flex flex-row justify-end items-start h-full p-2'>Нет в наличии</p>}
 
         

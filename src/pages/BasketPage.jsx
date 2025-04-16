@@ -13,22 +13,17 @@ function BasketPage() {
 
   const basketCount = useSelector((state)=>state.counter.value);
   const dispatch = useDispatch();
-  const products = [
-    {img:'/assets/image.png', name:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»", price:44.50, discount:10, count:2,empty:false},
-    {img:'/assets/image.png', name:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»", price:44.50, discount:10, count:2,empty:true},
-    {img:'/assets/image.png', name:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»", price:44.50, discount:10, count:2,empty:true},
-    {img:'/assets/image.png', name:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»", price:44.50, discount:10, count:2,empty:false},
-    {img:'/assets/image.png', name:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»", price:44.50, discount:10, count:2,empty:false}
-  ]
 
-  const allSumm = products.reduce((acc, curr)=>acc +(curr.price*curr.count), 0);
-  const discountSum = products.reduce((acc, curr)=> 
+  const basket = useSelector((state)=>state.counter.basket)
+
+  const allSumm = basket.reduce((acc, curr)=>acc +(curr.price*curr.count), 0);
+  const discountSum = basket.reduce((acc, curr)=> 
     acc + ((curr.price *curr.count * curr.discount)/100)
   , 0);
   const summ = allSumm - discountSum;
 
 
-  const count = products?.length ?? 0;
+  const count = basket?.length ?? 0;
 
   return (
     <section className=' px-32 py-6 w-full flex gap-8 flex-col min-h-screen items-start '>
@@ -45,7 +40,7 @@ function BasketPage() {
           </div>
           <div className='flex flex-col justify-start items-center gap-6'>
 
-            {products.map((x, i)=>(
+            {basket.map((x, i)=>(
               <BasketCard key={i} img={x.img} name={x.name} price={x.price} discount={x.discount} count={x.count} empty={x.empty}/>
             ))}
             
@@ -65,8 +60,8 @@ function BasketPage() {
                 <p>Скидка</p>
               </div>
               <div className=' flex flex-col items-start gap-3'>
-                <Price price={allSumm ??0} className={`font-semibold text-zinc-800`} />
-                <span className='text-[#FF6633] flex flex-row items-center font-bold'>-<Price price={discountSum??0} /></span>
+                <Price price={allSumm.toFixed(2) ??0} className={`font-semibold text-zinc-800`} />
+                <span className='text-[#FF6633] flex flex-row items-center font-bold'>-<Price price={discountSum.toFixed(2)??0} /></span>
               </div>
 
             </div>
@@ -74,7 +69,7 @@ function BasketPage() {
             <div className='flex flex-col w-full'>
                 <div className='flex flex-row w-full justify-between text-zinc-500'>
                   <p>Итог</p>
-                  <Price className={`font-extrabold text-2xl text-zinc-800`} price={summ}/>
+                  <Price className={`font-extrabold text-2xl text-zinc-800`} price={summ.toFixed(2)}/>
               
                 </div>
                 <div className=' flex flex-row items-center justify-center text-green-500 gap-4'>

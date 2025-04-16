@@ -16,31 +16,31 @@ import AboutPage from './pages/AboutPage.jsx'
 import { Provider } from 'react-redux'
 import { store } from './app/store.js'
 
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-<Provider store={store} >
+    <Provider store={store} >
 
-    
-    <BrowserRouter>
-      <Routes>
-        <Route element={<MainLayout />}>
-          <Route index element={<App />} />
-          <Route element={<BreadcrumbLayout />}>
-            <Route path="catalogs">
-            <Route index element={<CatalogsPage />} />
-            <Route path=":catalogId" element={<CatalogPage />} />
-            <Route path=":catalogId/:productId" element={<ProductPage />} />
+      <BrowserRouter>
+        <Routes>
+          <Route element={<MainLayout />}>
+            <Route index element={<App />} />
+            <Route element={<BreadcrumbLayout />}>
+              <Route path="catalogs">
+              <Route index element={<CatalogsPage />} />
+              <Route path=":catalogId" element={<CatalogPage />} />
+              <Route path=":catalogId/:productId" element={<ProductPage />} />
+            </Route>
+            <Route path="contacts" element={<ContactsPage />} />
+            <Route path='orders' element={<OrdersPage/>} />
+            <Route path='favorites' element={<FavoritesPage/>} />
+            <Route path='basket' element={<BasketPage/>} />
+            <Route path='about' element={<AboutPage/>} />
+            </Route>
+            
           </Route>
-          <Route path="contacts" element={<ContactsPage />} />
-          <Route path='orders' element={<OrdersPage/>} />
-          <Route path='favorites' element={<FavoritesPage/>} />
-          <Route path='basket' element={<BasketPage/>} />
-          <Route path='about' element={<AboutPage/>} />
-          </Route>
-          
-        </Route>
-      </Routes>
-    </BrowserRouter>
+        </Routes>
+      </BrowserRouter>
 
     </Provider>
   </StrictMode>

@@ -5,12 +5,14 @@ import Button from '../ui/Button'
 import { Link } from 'react-router'
 import { useParams } from 'react-router'
 import { LuShoppingCart } from 'react-icons/lu'
-import { useDispatch } from 'react-redux'
-import { increment } from '../../features/counter/counterSlicer'
+import { useDispatch, useSelector } from 'react-redux'
+import { addToBasket} from '../../features/counter/counterSlicer'
 
 function ProductCard({price, priceOriginal, title, img, discount, id, count}) {
 
   let {catalogId} = useParams();
+
+const basket = useSelector((state)=>state.counter.basket)
 
   const dispatch = useDispatch();
 
@@ -55,7 +57,7 @@ function ProductCard({price, priceOriginal, title, img, discount, id, count}) {
         <Link to={`/catalogs/${catalogId}/${id}`} className=' hover:text-[#FF6633]'><p className=' line-clamp-2 text-start'>{title}</p></Link>
           
           <FiveStars/>
-          <Button width={"lg"} onClicked={()=>dispatch(increment())} title="Купить" className="hover:bg-[#FF6633] hover:border-[#FF6633] hover:text-white bg-transparent border-2  border-green-400 text-green-400"/>
+          <Button width={"lg"} onClicked={()=>{dispatch(addToBasket({price, priceOriginal, title, img, discount, id, count:1})); console.log(basket)}} title="Купить" className="hover:bg-[#FF6633] hover:border-[#FF6633] hover:text-white bg-transparent border-2  border-green-400 text-green-400"/>
 
         </div>
 

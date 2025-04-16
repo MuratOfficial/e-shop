@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
   value: 0,
+  basket:[],
 initialProducts: [
     
         {
@@ -13,51 +14,51 @@ initialProducts: [
           id: "product1"
         },
         {
-          priceOriginal: 50.55,
+          priceOriginal: 60.50,
           discount:50,
-          img:"/assets/image.png",
-          price:48.58899,
-          title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
+          img:"/assets/products/1.png",
+          price:49.4957820,
+          title:"Г/Ц Блинчики с мясом вес, Россия",
           id: "product2"
         },
         {
-          priceOriginal: 50.55,
+          priceOriginal: 290.55,
           discount:50,
-          img:"/assets/image.png",
-          price:48.58899,
-          title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
+          img:"/assets/products/2.png",
+          price:159.987789,
+          title:"Молоко ПРОСТОКВАШИНО паст. питьевое цельное отборное...",
           id: "product3"
         },
         {
-          priceOriginal: 50.55,
+          priceOriginal: 99.55,
           discount:50,
-          img:"/assets/image.png",
-          price:48.58899,
-          title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
+          img:"/assets/products/3.png",
+          price:89.58899,
+          title:"Колбаса сырокопченая МЯСНАЯ ИСТОРИЯ Сальчичон и Тоскан...",
           id: "product4"
         },
         {
-          priceOriginal: 50.55,
+          priceOriginal: 80.55,
           discount:50,
-          img:"/assets/image.png",
-          price:48.58899,
-          title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
+          img:"/assets/products/8.png",
+          price:69.58899,
+          title:"Сосиски вареные МЯСНАЯ ИСТОРИЯ Молочные и С сыро...",
           id: "product5"
         },
         {
-          priceOriginal: 50.55,
+          priceOriginal: 90.55,
           discount:50,
-          img:"/assets/image.png",
-          price:48.58899,
-          title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
+          img:"/assets/products/7.png",
+          price:79.58899,
+          title:"напиток piala ice tea манго-ананас",
           id: "product6"
         },
         {
-          priceOriginal: 50.55,
+          priceOriginal: 700.55,
           discount:50,
-          img:"/assets/image.png",
-          price:48.58899,
-          title:"Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
+          img:"/assets/products/6.png",
+          price:599.96899,
+          title:"Lay's чипсы картофельные рифленые `лосось в сливочныом соусе`",
           id: "product7"
         },
     
@@ -73,10 +74,7 @@ export const counterSlice = createSlice({
   initialState,
   reducers: {
     increment: (state) => {
-      // Redux Toolkit allows us to write "mutating" logic in reducers. It
-      // doesn't actually mutate the state because it uses the Immer library,
-      // which detects changes to a "draft state" and produces a brand new
-      // immutable state based off those changes
+    
       state.value += 1
     },
     decrement: (state) => {
@@ -85,10 +83,14 @@ export const counterSlice = createSlice({
     incrementByAmount: (state, action) => {
       state.value += action.payload
     },
+    addToBasket:(state, action)=>{
+      state.value += 1;
+      state.basket.push(action.payload)
+    }
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { increment, decrement, incrementByAmount } = counterSlice.actions
+export const { increment, decrement, incrementByAmount, addToBasket } = counterSlice.actions
 
 export default counterSlice.reducer
