@@ -6,7 +6,7 @@ import { Link } from 'react-router'
 import { useParams } from 'react-router'
 import { LuShoppingCart } from 'react-icons/lu'
 import { useDispatch, useSelector } from 'react-redux'
-import { addToBasket} from '../../features/counter/counterSlicer'
+import { addToBasket, removeFromBasket} from '../../features/counter/counterSlicer'
 
 function ProductCard({price, priceOriginal, title, img, discount, id, count}) {
 
@@ -15,6 +15,18 @@ function ProductCard({price, priceOriginal, title, img, discount, id, count}) {
 const basket = useSelector((state)=>state.counter.basket)
 
   const dispatch = useDispatch();
+
+  const insist = basket.find(x=>x.id === id);
+
+
+  function clickToProduct(){
+    if(insist){
+      dispatch(removeFromBasket({id}))
+    }else{
+      dispatch(addToBasket({price, priceOriginal, title, img, discount, id, count:1})); 
+      console.log(basket);
+    }
+  }
 
   return (
     <div className=' rounded-md min-h-[349px] gap-0.5 w-[272px] p-4 bg-white hover:shadow-md transition justify-between duration-200 delay-75 flex flex-col'>
@@ -57,7 +69,7 @@ const basket = useSelector((state)=>state.counter.basket)
         <Link to={`/catalogs/${catalogId}/${id}`} className=' hover:text-[#FF6633]'><p className=' line-clamp-2 text-start'>{title}</p></Link>
           
           <FiveStars/>
-          <Button width={"lg"} onClicked={()=>{dispatch(addToBasket({price, priceOriginal, title, img, discount, id, count:1})); console.log(basket)}} title="Купить" className="hover:bg-[#FF6633] hover:border-[#FF6633] hover:text-white bg-transparent border-2  border-green-400 text-green-400"/>
+          <Button width={"lg"} onClicked={()=>clickToProduct()} title={insist ? "В корзине" : "Купить"} className={`hover:bg-[#FF6633] border-2  hover:border-[#FF6633] ${insist ? "bg-[#FF6633] text-white border-[#FF6633]":"bg-transparent border-green-400 text-green-400"} hover:text-white   `}/>
 
         </div>
 
