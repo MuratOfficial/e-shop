@@ -8,6 +8,8 @@ import Switch from '../components/ui/Switch'
 import Price from '../components/helper/Price';
 import { BiSolidCircleHalf } from 'react-icons/bi';
 import { useDispatch, useSelector } from 'react-redux';
+import { IoCheckbox } from 'react-icons/io5';
+import { pickAll, removeAllPick } from '../features/counter/counterSlicer';
 
 function BasketPage() {
 
@@ -25,6 +27,7 @@ function BasketPage() {
 
   const count = basket?.length ?? 0;
 
+
   return (
     <section className=' px-32 py-6 w-full flex gap-8 flex-col min-h-screen items-start '>
       <h2 className='relative pr-8 text-7xl font-extrabold text-[#414141]'>
@@ -35,13 +38,13 @@ function BasketPage() {
         <div className="col-span-3 flex flex-col gap-4 items-start">
 
           <div className='flex flex-row justify-start items-center'> 
-            <Button  title={`Выделить все`} className={` w-fit gap-2 hover:text-white hover:bg-[#FF6633]`} icon={<TbSquareMinusFilled size={30} fill='#70C05B' />}/>
-            <Button title={`Удалить выбранные`} className={` group w-fit gap-2 text-[#FF6633] items-center hover:text-red-600 `} icon={<FaTrashAlt className=' opacity-0 group-hover:opacity-100 transition delay-75 duration-150 '  size={20} fill='red' />}/>  
+            <Button onClicked={()=>dispatch(pickAll())} title={`Выделить все`} className={` w-fit gap-2 hover:text-white hover:bg-[#FF6633]`} icon={<IoCheckbox size={30} fill='#70C05B' />}/>
+            <Button onClicked={()=>{dispatch(removeAllPick()) ; }} title={`Удалить выбранные`} className={` group w-fit gap-2 text-[#FF6633] items-center hover:text-red-600 `} icon={<FaTrashAlt className=' opacity-0 group-hover:opacity-100 transition delay-75 duration-150 '  size={20} fill='red' />}/>  
           </div>
           <div className='flex flex-col justify-start items-center gap-6'>
 
             {basket.map((x, i)=>(
-              <BasketCard key={i} img={x.img} name={x.name} price={x.price} discount={x.discount} count={x.count} empty={x.empty}/>
+              <BasketCard key={i} picked={x.picked} sum={x.sum} id={x.id} img={x.img} name={x.title} price={x.price} discount={x.discount} count={x.count} empty={x.empty}/>
             ))}
             
            

@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = {
   value: 0,
   basket:[],
+  pickedBasket: [],
 initialProducts: [
     
         {
@@ -94,12 +95,32 @@ export const counterSlice = createSlice({
   name: 'counter',
   initialState,
   reducers: {
-    increment: (state) => {
+    increment: (state, action) => {
     
-      state.value += 1
+      const includes = state.basket.find(x=>x.id===action.payload);
+      if(includes){
+        const el = state.basket.findIndex(x=>x.id===action.payload);
+        state.basket[el].count += 1;
+        state.basket[el].sum +=  ((includes.price * (100 - includes.discount))/100)
+        
+
+      }
+      
     },
-    decrement: (state) => {
-      state.value -= 1
+    decrement: (state, action) => {
+      const includes = state.basket.find(x=>x.id===action.payload);
+      if(includes){
+        const el = state.basket.findIndex(x=>x.id===action.payload);
+        if(state.basket[el].count >=1){
+          state.basket[el].count -= 1;
+          state.basket[el].sum -=  ((includes.price * (100 - includes.discount))/100)
+        }else{
+          state.basket.splice(el, 1)
+        }
+        
+        
+
+      }
     },
     incrementByAmount: (state, action) => {
       state.value += action.payload
@@ -111,10 +132,11 @@ export const counterSlice = createSlice({
       if(includes){
         const el = state.basket.findIndex(x=>x.id===action.payload.id);
         state.basket[el].count += 1;
+        
 
       }else{
-        
-        state.basket.push(action.payload);
+
+        state.basket.push({...action.payload, picked:false, sum: ((action.payload.price * (100 - action.payload.discount))/100) });
         state.value = state.basket.length;
       }
 
@@ -124,11 +146,43 @@ export const counterSlice = createSlice({
       const el = state.basket.findIndex(x=>x.id===action.payload.id);
       state.basket.splice(el, 1)
       state.value = state.basket.length;
+    },
+    pickOrNot:(state, action)=>{
+
+      const basket = state.basket;
+
+      const pickedElement = basket.find(x=>x.id===action.payload);
+ 
+
+      if(pickedElement){
+
+        if(!pickedElement.picked){
+          pickedElement.picked = true
+        }else{
+          pickedElement.picked = false
+        }
+        
+        
+
+
+      }
+
+      
+    },
+    pickAll:(state)=>{
+      const basket = state.basket;
+      basket.forEach(x=>x.picked = true)
+      state.basket = basket;
+    },
+    removeAllPick:(state)=>{
+      const basket = state.basket;
+      basket.forEach(x=>x.picked = false)
+      state.basket = basket;
     }
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { increment, decrement, incrementByAmount, addToBasket, removeFromBasket } = counterSlice.actions
+export const { increment, decrement, incrementByAmount, addToBasket, removeFromBasket, pickOrNot, pickAll, removeAllPick } = counterSlice.actions
 
 export default counterSlice.reducer
